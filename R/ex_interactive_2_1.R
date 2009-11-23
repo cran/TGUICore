@@ -63,16 +63,20 @@
 			n <- 100
 		}
 		z <- list()
+    
 		if(data==1) {
-			z[[1]] = rnorm(n, rnorm(1,3), runif(1,1,3))
+      set.seed(12232451)
+      z[[1]] = rnorm(n)
 			attr(z[[1]], "message") = "normal"
 		}
 		if(data==2) {
-			z[[1]] = exp(rnorm(n, rnorm(1, .5), runif(1,0.2,1.3)))
+      set.seed(12341)
+      z[[1]] = exp(rnorm(n))
 			attr(z[[1]], "message") = "log-normal"
 		}
 		if(data==3) {
-			z[[1]] = rexp(n, runif(1,0.5,1.5))
+      set.seed(1556232541)
+      z[[1]] = rexp(n)#, runif(1,0.5,1.5))
 			attr(z[[1]], "message") = "exp"
 		}
 		z[[1]] = round(z[[1]], 4)

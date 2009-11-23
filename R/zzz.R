@@ -1,8 +1,8 @@
 .onAttach <- function(lib, pkg) {
-	if(!file.exists("adminExercise.txt")){
-    fco <- file("adminExercise.txt","w")
-    close(fco)
-  }
+	#if(!file.exists("adminExercise.txt")){
+   	#	fco <- file("adminExercise.txt","w")
+    #	close(fco)
+  	#}
 	### Some strings that can be used throughout the GUI's
 	mainTitle 	<- "TGUI-System"
 	mainSub 	<- "Toggle-GUI-System"
@@ -53,7 +53,15 @@
 	aTassign("developed1", developed1); 	aTassign("developed2", developed2)
 	aTassign("notice", notice)
   	aTassign("alwaysOn",vector())
-  	cat("Start the GUI for the participants with runGUI()\n and the GUI for the course leader with adminGUI()\n")
+
+	# activate all examples by default
+	if(!file.exists("adminExercise.txt")) {
+		dat <- as.character(read.table(file=paste(aTget("pathEtc"), "/contents.csv", sep=""), sep=";")[,3])
+		dat <- as.character(sapply(dat, function(x) { substr(x, 1, nchar(x)-2) } ))
+		write.table(dat, file="adminExercise.txt", row.names=FALSE, col.names=FALSE, quote=FALSE)			
+	}		
+	
+	cat("Start the GUI for the participants with runGUI()\n and the GUI for the course leader with adminGUI()\n")
     cat("The window of the R console should be minimized while using the GUI.\n")
 #  	runGUI()
 }
