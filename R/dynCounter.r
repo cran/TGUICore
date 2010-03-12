@@ -1,6 +1,6 @@
 dynCounterCall <- function() {
 	pressButton <- function() {
-		setwd(pathGUI)		
+		setwd(aTget("pathGUI"))		
 	    tkdestroy(ttDyn)	
 		rm(list=ls(env=TGUIenv), envir=TGUIenv)
 	}		
@@ -89,7 +89,7 @@ dynCounterCall <- function() {
 	
 	auswFrame <- tkframe(totFrame)
 	tkgrid(auswFrame)
-	q2 <- tklabel(auswFrame, text="Jump to evaluation for the open examples", font=setFont(size="extralarge", bold=TRUE))
+	q2 <- tklabel(auswFrame, text="Jump to evaluation", font=setFont(size="extralarge", bold=TRUE))
 	tkgrid(q2)	
 	tkgrid.configure(q2, columnspan=5)	
 	

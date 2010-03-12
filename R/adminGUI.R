@@ -5,10 +5,10 @@ enableExercise <- defmacro( frame=MainFrame,
 							default="0",
 							titles,
 	expr={	
-		fileExists <- file.exists("adminExercise.txt") & length(readLines("adminExercise.txt") > 0)
+		fileExists <- file.exists(paste(aTget("pathGUI"),"/adminExercise.txt",sep="")) & length(readLines(paste(aTget("pathGUI"),"/adminExercise.txt",sep="")) > 0)
 		if(fileExists==FALSE) {
-			file.create("adminExercise.txt")
-			write.table(file="adminExercise.txt",exercise[[1]],row.names = FALSE,col.names = FALSE,quote=FALSE)
+			file.create(paste(aTget("pathGUI"),"/adminExercise.txt",sep=""))
+			write.table(file=paste(aTget("pathGUI"),"/adminExercise.txt",sep=""),exercise[[1]],row.names = FALSE,col.names = FALSE,quote=FALSE)
 		}		
 		
 		contents <- aTget("contents")	
@@ -16,7 +16,7 @@ enableExercise <- defmacro( frame=MainFrame,
 		contents$Funktion2 <- as.vector(sapply(contents$Funktion2, function(x) { substr(x, 1, nchar(x)-2) } ) )
 		contentsSpl <- split(contents, as.factor(contents[,1]))
 
-	  	examplesAE <- read.table("adminExercise.txt", sep=",", header=F)		
+	  	examplesAE <- read.table(paste(aTget("pathGUI"),"/adminExercise.txt",sep=""), sep=",", header=F)		
 	  	examplesAE <- as.character(examplesAE[,1])				  
   		vorhExamples <- returnExamplesWithAusw() 	
 		
@@ -88,7 +88,7 @@ enableExercise <- defmacro( frame=MainFrame,
 		  	examplesC <- as.character(contents$Funktion)
 		  	examplesC <- as.vector(sapply(examplesC, function(x) { substr(x, 1, nchar(x)-2) } ) )
 		  
-		  	examplesAE <- read.table("adminExercise.txt", sep=",", header=F)
+		  	examplesAE <- read.table(paste(aTget("pathGUI"),"/adminExercise.txt",sep=""), sep=",", header=F)
 		  	examplesAE <- as.character(examplesAE[,1])			
 		  	examples <- examplesC[which(examplesC %in% examplesAE)]
 		    return(examples)
@@ -113,7 +113,7 @@ enableExercise <- defmacro( frame=MainFrame,
         	attributes(out) <- list()
         	if(!is.null(aTget("alwaysOnExercise")))
           		out <- c(out,aTget("alwaysOnExercise"))
-        	write.table(out,file="adminExercise.txt",row.names=FALSE,col.names=FALSE,quote=FALSE)
+        	write.table(out,file=paste(aTget("pathGUI"),"/adminExercise.txt",sep=""),row.names=FALSE,col.names=FALSE,quote=FALSE)
       	}
 		setAll <- function(i) {
       		CourseValue <- tclvalue(aTget("CourseVar")[[i]])
@@ -125,7 +125,7 @@ enableExercise <- defmacro( frame=MainFrame,
       		writeExercise()
     	}
 		
-    	pathGUI <- getwd()
+    	pathGUI <- aTget("pathGUI")
     	tt <- tktoplevel()
 		tkwm.title(tt,aTget("admintitle"))
     	if(Sys.info()[1]=="Windows")

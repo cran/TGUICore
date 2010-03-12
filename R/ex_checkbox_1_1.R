@@ -31,13 +31,13 @@
 	}
 	else {		
 		OpenWindow(title=paste("Evaluation - ", exerciseTitle, sep=""))
-		MultipleChoiceAnswer(frame=MainFrame, 
+		MultipleChoice(frame=MainFrame, 
 				checkbox1,
 				question1=q1,
 				question2=q2,
 				labels=labs,
 				plotFunction=PiePlot,
-				filename=fileExample)	
+				filename=fileExample,Answer=TRUE)	
 		tkgrid(checkbox1)		
 	}
 }

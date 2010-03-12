@@ -6,9 +6,10 @@
 \arguments{
 	\item{pwd}{admin-GUI may be started with password only}
   	\item{evaluierung}{should GUI be started in evaluation mode, default=FALSE}
-  	\item{enableAll}{should GUI be started with all available options, default=FALSE}
+  	\item{enableAll}{should GUI be started with all available options, default=TRUE}
 }
-\details{To be written}
+\details{The menu entries of the GUI are defined by a csv file in the directory etc in the installation
+directory of the TGUICore package.}
 \value{Graphical Admin Interface}
 \author{Matthias Templ, Gerlinde Dinges, Alexander Kowarik, Bernhard Meindl}
 \examples{

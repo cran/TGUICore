@@ -4,18 +4,17 @@
     #	close(fco)
   	#}
 	### Some strings that can be used throughout the GUI's
-	mainTitle 	<- "TGUI-System"
-	mainSub 	<- "Toggle-GUI-System"
+	mainTitle 	<- "TGUI system"
+	mainSub 	<- "Teaching GUI system"
 	subTitle 	<- "Interactive Feedback- and Training-Tool for Teaching & Learning"
 	usertitle 	<- "Student Interface"
 	admintitle 	<- "Trainer Interface"
-	developed1 	<- "TGUI-Basic-System developed by G. Dinges, M. Templ (2005)"
+	developed1 	<- "TGUI Basic system developed by G. Dinges, M. Templ (2005)"
 	developed2 	<- "Advanced and rewritten by G. Dinges, A. Kowarik, B. Meindl, M. Templ (2009)" 
-	notice 		<- "Feedback is welcome! Please visit www.statistik.at"	
+	notice 		<- "Feedback is welcome! Visit www.statistik.at"	
 	
 	#setwd(tclvalue(tkchooseDirectory())) 
 	##should be active in build for external TODO: tkchooseDirectory aktivieren
-  	pathGUI <<- getwd()
   	version <- citation("TGUICore")$note
   	version <- substr(version, (nchar(version)-5), nchar(version))
 	
@@ -29,7 +28,8 @@
 	  
 	cat("\n TGUI (Core) version",version,"has been loaded \n\n")
 
-  	pathGUI <<- getwd()
+  	pathGUI <- getwd()
+    aTassign("pathGUI",getwd())
 	
 	if(Sys.info()[1]=="Windows") {
 		pathEtc <- paste(searchpaths()[grep("TGUICore", searchpaths())], "\\etc", sep="")

@@ -141,12 +141,12 @@
 				radio_value=plotValues,click.function=NULL,
 				design=plotDesign,hscale=1.3,vscale=1.3
 		)
-		SingleChoiceAnswer(frame=MainFrame, 
+		SingleChoice(frame=MainFrame, 
 				interactive32,
 				question1=q1,
 				question2=q2,
 				labels=labs,
-				filename=fileExample)
+				filename=fileExample,Answer=TRUE)
 		
 		tkgrid(interactive31)
 		tkgrid(interactive32)

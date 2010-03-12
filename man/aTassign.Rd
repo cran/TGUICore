@@ -4,7 +4,7 @@
 \alias{aTexists}
 \alias{aTrm}
 \title{aTassign}
-\description{assigns an object to namespace adminTGUIenv. aTget reads object from this namespace while aTexists checks for existence.}
+\description{assign/delete/check/retrieve an object to/from the namespace adminTGUIenv.}
 \usage{aTassign(x,value)}
 \usage{aTget(x)}
 \usage{aTrm(x)}

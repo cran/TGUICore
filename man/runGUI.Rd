@@ -2,9 +2,8 @@
 \alias{runGUI}
 \title{runGUI}
 \description{Graphical user interface for interactive and probably statistical courses}
-\usage{runGUI(evaluierung = FALSE)}
+\usage{runGUI()}
 \arguments{
-  \item{evaluierung}{should GUI be started in evaluation mode, default=FALSE}
 }
 \details{To be written}
 \value{Graphical User Interface}

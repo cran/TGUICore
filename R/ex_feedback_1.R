@@ -13,10 +13,10 @@ ex_feedback_1 <- function(eval=FALSE){
         filename=fileExample)	
   }
   else{
-    FeedbackAnswer(frame=MainFrame, 
+    Feedback(frame=MainFrame, 
         name=feed1,
         question1=qu1,
-        question2=qu2,
+        question2=qu2,Answer=TRUE,
         filename=fileExample)
   }
   tkgrid(feed1)

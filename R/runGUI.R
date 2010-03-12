@@ -1,7 +1,7 @@
-runGUI <- function(evaluierung = FALSE ){
+runGUI <- function(){
 	callExercise <- function(command) {
     	split_command <- unlist(strsplit(command,"\\("))
-    	TF <- length(rL <- readLines(fc <- file("adminExercise.txt")))>0
+    	TF <- length(rL <- readLines(fc <- file(paste(aTget("pathGUI"),"/adminExercise.txt",sep=""))))>0
     	close(fc)
     	if(TF) {
       		if(split_command[1] %in% rL)
@@ -12,7 +12,7 @@ runGUI <- function(evaluierung = FALSE ){
 		else
       		tkmessageBox(title="Exercise is not available",	message="This exercise has not been unlocked yet!")
   	}
-  	pathGUI <- getwd()
+  	pathGUI <- aTget("pathGUI")
   	tt <- tktoplevel(background="white")
 	tkwm.title(tt, aTget("usertitle"))
 	

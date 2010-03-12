@@ -58,7 +58,7 @@ timeseries <- function(eval=FALSE) {
   q1 <- "Is the Moving-Average Process stationary?"
   q2 <- c("")
   labs <- c("Yes","No")
-  ue <- "timeseries"
+  ex <- "timeseries"
   
   
   plotHeader <- 
@@ -77,13 +77,13 @@ timeseries <- function(eval=FALSE) {
         )
         tkgrid(plotLagemasse)
         SingleChoice(frame=MainFrame,
-            name=ZeitaufwandFrage,
+            name=ts,
             question1=q1,
             question2=q2,
             labels=labs,
-            filename=ue
+            filename=ex
         )
-        tkgrid(ZeitaufwandFrage)		
+        tkgrid(ts)		
       }
       else {
         exerciseTitle <- paste("Evaluation - ", exerciseTitle, sep="")
@@ -100,25 +100,13 @@ timeseries <- function(eval=FALSE) {
             design="leftright", hscale=1.2, vscale=1
         )
         tkgrid(plotLagemasse)
-        SingleChoiceAnswer(frame=MainFrame,
-            name=ZeitaufwandFrage,
+        SingleChoice(frame=MainFrame,
+            name=ts,
             question1=q1,
             question2=q2,
             labels=labs,
-            filename=ue
+            filename=ex,Answer=TRUE
         )
-        tkgrid(ZeitaufwandFrage)		
+        tkgrid(ts)		
       }
 }
-
-
-
-
-
-
-
-
-
-
-
-

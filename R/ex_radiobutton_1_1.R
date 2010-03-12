@@ -32,13 +32,13 @@
 	}
 	else {
 		OpenWindow(title=paste("Evaluation - ", exerciseTitle, sep=""))
-		SingleChoiceAnswer(frame=MainFrame, 
+		SingleChoice(frame=MainFrame, 
 				radiobutton1,
 				question1=q1,
 				question2=q2,
 				labels=labs,
 				plotFunction=plotIncome,
-				filename=fileExample)	
+				filename=fileExample,Answer=TRUE)	
 		tkgrid(radiobutton1)		
 	}
 }
