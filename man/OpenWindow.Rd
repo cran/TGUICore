@@ -2,7 +2,7 @@
 \alias{OpenWindow}
 \title{OpenWindow}
 
-\description{Macro to open a window.}
+\description{Macro to create a full-screen tk-window.}
 \usage{OpenWindow(window=tt, frame=MainFrame, fullscreen=TRUE, title="", image=NULL, image_position="top")}
 
 \arguments{
@@ -13,8 +13,6 @@
 	\item{image}{should an image be drawn in the window? default=NULL.}
 	\item{image_position}{the position of the image, if an image path was specified. Default position is to draw the image on top of the window.}
 }
-\details{
-
-}
+\details{for example see package TGUITeaching}
 \author{Alexander Kowarik, Bernhard Meindl}
 \keyword{methods}

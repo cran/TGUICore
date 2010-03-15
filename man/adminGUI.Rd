@@ -1,8 +1,8 @@
 \name{adminGUI}
 \alias{adminGUI}
 \title{adminGUI}
-\description{Graphical admin interface for interactive and probably statistical courses}
-\usage{adminGUI(pwd="Methodik2009", evaluierung = FALSE, enableAll=TRUE) }
+\description{Graphical trainer interface for interactive and probably statistical courses}
+\usage{adminGUI(pwd="defaultPW", evaluierung = FALSE, enableAll=TRUE) }
 \arguments{
 	\item{pwd}{admin-GUI may be started with password only}
   	\item{evaluierung}{should GUI be started in evaluation mode, default=FALSE}

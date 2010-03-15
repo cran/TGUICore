@@ -2,7 +2,7 @@
 \alias{InteractivePlot}
 \title{InteractivePlot}
 
-\description{Macros that draw either complete Windows or complete Frames depending on input-Parameters.}
+\description{Macros that draw either complete Windows or complete Frames depending on input-parameters.}
 \usage{InteractivePlot(frame=MainFrame, name, plot.function, click.function=NULL,
 	hscale=2, vscale=2,
     slider=NULL, slider_lim=NULL, slider_start=NULL, slider_res=NULL, slider_label=NULL, slider_header=NULL,
@@ -12,11 +12,11 @@
 \arguments{
 	\item{frame}{the frame in which the ExitButton should be drawn.}
 	\item{name}{the name of the frame that is created and which includes the ExitButton}
-	\item{plot.function}{function which creates the plot(without parameters) for the question}
-	\item{click.function}{function which should be called if a plot should interact with clicks in the plot}
-	\item{hscale}{horizontal scale for the included plot}
-	\item{vscale}{vertical scale for the included plot}
-	\item{slider}{Slider names}
+	\item{plot.function}{function which creates the plot(without parameters) for a given question}
+	\item{click.function}{function which should be called if interaction with a plot using mouse-clicks is possible}
+	\item{hscale}{horizontal scale}
+	\item{vscale}{vertical scale}
+	\item{slider}{slider names}
 	\item{slider_lim}{slider limits}
 	\item{slider_start}{initial values for the sliders}
 	\item{slider_res}{Resolution of the sliders}

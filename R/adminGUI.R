@@ -1,4 +1,4 @@
-pw <- function() { return("Methodik2009") }
+pw <- function() { return("defaultPW") }
 enableExercise <- defmacro( frame=MainFrame,
 							name,
 							exercise,
@@ -81,7 +81,7 @@ enableExercise <- defmacro( frame=MainFrame,
  	}
 )
 
-`adminGUI` <- function(pwd="Methodik2009",evaluierung = FALSE, enableAll=TRUE) {
+`adminGUI` <- function(pwd="defaultPW",evaluierung = FALSE, enableAll=TRUE) {
   	if(pwd==pw()) {
 		returnExamplesWithAusw <- function() {
 			contents <- aTget("contents")	

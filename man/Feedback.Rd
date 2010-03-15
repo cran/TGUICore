@@ -13,6 +13,6 @@
 	\item{Answer}{TRUE for showing the evaluation view of the Feedback widget}
 	\item{filename}{filename to save the entered information in}
 }
-\details{for example see package TGUITeaching}
+\details{for examples see package TGUITeaching}
 \author{Alexander Kowarik, Bernhard Meindl}
 \keyword{methods}
