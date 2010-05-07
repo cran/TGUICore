@@ -136,7 +136,7 @@ SingleChoice <- defmacro(frame=MainFrame,
             erg <- which(labels==erg)	
             write.table(erg, file=paste(filename,".txt", sep=""), sep=",", append = TRUE, row.names = FALSE, col.names = FALSE)
             tkdestroy(tt)
-            rm(list=ls(env=TGUIenv), envir=TGUIenv)   
+            Tclear()   
           }
         }	
         
@@ -200,7 +200,7 @@ SingleChoice <- defmacro(frame=MainFrame,
         Tassign("labelsWorking", labelsWorking)
         for(i in 1:length(labelsWorking)) {			
           Tassign("i", i)
-          evalq(tkconfigure(rb[[i]], variable = rbValue, value=as.character(labelsWorking[i])),env=TGUIenv)
+          evalq(tkconfigure(rb[[i]], variable = rbValue, value=as.character(labelsWorking[i])),env=as.environment(which(search()=="TGUIenv")))
         }		
         
         if(!is.null(note)) {

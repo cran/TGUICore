@@ -4,7 +4,7 @@ SingleChoice,
 MultipleChoice,
 OpenWindow,ExitButton,
 showPDF,setFont,
-Tassign,Tget,Texists,Trm,
+Tassign,Tget,Texists,Trm,Tclear,
 aTassign,aTget,aTexists,aTrm,
 SingleChoiceGrid,
 Feedback

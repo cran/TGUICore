@@ -1,12 +1,14 @@
 # environment functions
-Tassign <- function(x,value) assign(x,value,env=TGUIenv)
-Tget <- function(x) get(x,env=TGUIenv)
-Trm <- function(x) rm(list=x,envir=TGUIenv)
-Texists <- function(x) exists(x,env=TGUIenv)
-aTassign <- function(x,value) assign(x,value,env=adminTGUIenv)
-aTget <- function(x) get(x,env=adminTGUIenv)
-aTexists <- function(x) exists(x,env=adminTGUIenv)
-aTrm <- function(x) rm(list=x,envir=adminTGUIenv)
+
+Tassign <- function(x,value) assign(x,value,pos=which(search()=="TGUIenv"))
+Tget <- function(x) get(x,pos=which(search()=="TGUIenv"))
+Trm <- function(x) rm(list=x,pos=which(search()=="TGUIenv"))
+Texists <- function(x) exists(x,envir=as.environment(which(search()=="TGUIenv")))
+Tclear <- function() rm(list=ls(pos=which(search()=="TGUIenv")),pos=which(search()=="TGUIenv"))
+aTassign <- function(x,value) assign(x,value,pos=which(search()=="adminTGUIenv"))
+aTget <- function(x) get(x,pos=which(search()=="adminTGUIenv"))
+aTexists <- function(x) exists(x,envir=as.environment(which(search()=="adminTGUIenv")))
+aTrm <- function(x) rm(list=x,pos=which(search()=="adminTGUIenv"))
 
 # show an exit button
 ExitButton <- defmacro(window=tt,frame=MainFrame,name,text="Close",

@@ -2,7 +2,7 @@ dynCounterCall <- function() {
 	pressButton <- function() {
 		setwd(aTget("pathGUI"))		
 	    tkdestroy(ttDyn)	
-		rm(list=ls(env=TGUIenv), envir=TGUIenv)
+		Tclear()
 	}		
 	genAuswertungsFunktion <- function(ex) {
 		comm <- paste(ex, "(eval=TRUE)", sep="")

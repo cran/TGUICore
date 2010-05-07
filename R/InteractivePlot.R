@@ -52,7 +52,7 @@ InteractivePlot <- defmacro(
       		for(i in 1:length(slider)) {
         		Tassign(slider[i],tclVar(slider_start[i]))
        		 	Tassign("i",i)
-        		evalq(tkconfigure(sl[[i]], variable = eval(parse(text=slider[i]))),env=TGUIenv)
+        		evalq(tkconfigure(sl[[i]], variable = eval(parse(text=slider[i]))),env=as.environment(which(search()=="TGUIenv")))
       		}
       		tkgrid(SliderFrame)
     	}
@@ -121,7 +121,7 @@ InteractivePlot <- defmacro(
 						Tassign(checkbox[[i]][[j]], tclVar(checkbox_start[[i]][[j]]))
 						Tassign("i",i)
 						Tassign("j",j)
-						evalq(tkconfigure(cl[[i]][[j]], variable = eval(parse(text=checkbox[[i]][[j]]))),env=TGUIenv)
+						evalq(tkconfigure(cl[[i]][[j]], variable = eval(parse(text=checkbox[[i]][[j]]))),env=as.environment(which(search()=="TGUIenv")))
 					}
 				}
 				tkgrid(cFrame)
@@ -189,7 +189,7 @@ InteractivePlot <- defmacro(
 					cat("i:", i,"\n")
 					Tassign(checkbox[i],tclVar(checkbox_start[i]))
 					Tassign("i",i)
-					evalq(tkconfigure(cl[[i]], variable = eval(parse(text=checkbox[i]))), env=TGUIenv)
+					evalq(tkconfigure(cl[[i]], variable = eval(parse(text=checkbox[i]))), env=as.environment(which(search()=="TGUIenv")))
 				}
 				tkgrid(cFrame)
 				tkgrid(CheckboxFrame)				
@@ -220,7 +220,7 @@ InteractivePlot <- defmacro(
         		Tassign("rl",rl)
         		for(i in 1:length(radio_label)) {
           			Tassign("i",i)
-          			evalq(tkconfigure(rl[[i]], variable = eval(parse(text=radio2))),env=TGUIenv)
+          			evalq(tkconfigure(rl[[i]], variable = eval(parse(text=radio2))),env=as.environment(which(search()=="TGUIenv")))
         		}
       		}		
 			
@@ -244,7 +244,7 @@ InteractivePlot <- defmacro(
           			for(i in 1:length(radio_label[[r]])) {
             			Tassign("i",i)
             			Tassign("r",r)
-            			evalq(tkconfigure(rl[[i]], variable = eval(parse(text=radio2[[r]]))),env=TGUIenv)
+            			evalq(tkconfigure(rl[[i]], variable = eval(parse(text=radio2[[r]]))),env=as.environment(which(search()=="TGUIenv")))
           			}
         		}                
       		}	

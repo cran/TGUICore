@@ -151,7 +151,7 @@ MultipleChoice <- defmacro(
           x <- data.frame(frage=1:lengthLabels, antwort=erg)	
           write.table(x, file=filename, sep=",", append = TRUE, row.names = FALSE, col.names = FALSE)
           tkdestroy(tt)
-          rm(list=ls(env=TGUIenv),envir=TGUIenv)
+          Tclear()
         }	
         
         filename <- paste(filename, ".txt", sep="")
@@ -217,7 +217,7 @@ MultipleChoice <- defmacro(
         for(i in 1:length(labels)){
           Tassign(vars[i], tclVar("0"))
           Tassign("i", i)
-          evalq(tkconfigure(cb[[i]], variable = eval(parse(text=vars[i]))),env=TGUIenv)
+          evalq(tkconfigure(cb[[i]], variable = eval(parse(text=vars[i]))),env=as.environment(which(search()=="TGUIenv")))
         }		
         
         if(!is.null(note)) {

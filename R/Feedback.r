@@ -19,7 +19,7 @@ Feedback <- defmacro(
             close(zz)
           }
           tkdestroy(tt)
-          rm(list=ls(env=TGUIenv),envir=TGUIenv)
+          Tclear()
         }
         
         name <- tkframe(frame)
@@ -72,7 +72,7 @@ Feedback <- defmacro(
       }else if(Answer){
         closeFeedback <- function(){
           tkdestroy(tt)
-          rm(list=ls(env=TGUIenv),envir=TGUIenv)
+          Tclear()
         }
         heights <- c(39,19,12,8,6)
         if(length(question2)>5){

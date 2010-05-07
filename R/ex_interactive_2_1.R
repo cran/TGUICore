@@ -53,9 +53,9 @@
 		par(bg="white")
 		type <- c("norm","lnorm","exp")
 		if(Texists("distr")){
-			distr <- type[as.numeric(evalq(tclvalue(distr), env = TGUIenv))]
-			data <- as.numeric(evalq(tclvalue(data), env = TGUIenv))
-			n <- as.numeric(evalq(tclvalue(n), env = TGUIenv))
+			distr <- type[as.numeric(evalq(tclvalue(distr), env=as.environment(which(search()=="TGUIenv"))))]
+			data <- as.numeric(evalq(tclvalue(data), env=as.environment(which(search()=="TGUIenv"))))
+			n <- as.numeric(evalq(tclvalue(n), env=as.environment(which(search()=="TGUIenv"))))
 		} 
 		else {
 			distr <- type[1]

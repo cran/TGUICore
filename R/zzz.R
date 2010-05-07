@@ -15,17 +15,19 @@
 	
 	#setwd(tclvalue(tkchooseDirectory())) 
 	##should be active in build for external TODO: tkchooseDirectory aktivieren
-  	version <- citation("TGUICore")$note
-  	version <- substr(version, (nchar(version)-5), nchar(version))
+    version <- packageDescription("TGUICore")$Version
 	
 	#TGUIenv should be trashed after use by an exercise
-    if (!exists("TGUIenv"))		
-		TGUIenv <<- new.env()  
+    if (!any(search()=="TGUIenv")){
+		  TGUIenv <- new.env()
+      attach(TGUIenv)
+    }
 	
 	#adminTGUIenv should never be trashed after use by an exercise
-	if (!exists("adminTGUIenv"))
-      	adminTGUIenv <<- new.env()
-	  
+  if (!any(search()=="adminTGUIenv")){
+    adminTGUIenv <- new.env()
+    attach(adminTGUIenv)
+  }
 	cat("\n TGUI (Core) version",version,"has been loaded \n\n")
 
   	pathGUI <- getwd()

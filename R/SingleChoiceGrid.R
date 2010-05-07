@@ -30,7 +30,7 @@ SingleChoiceGrid <- defmacro(
           else {
             write.table(t(erg), file=paste(filename,".txt",sep=""), sep=",", append = TRUE, row.names = FALSE, col.names = FALSE)
             tkdestroy(tt)
-            rm(list=ls(env=TGUIenv), envir=TGUIenv)   
+            Tclear()   
           }
         }	
         
