@@ -17,7 +17,7 @@ ExitButton <- defmacro(window=tt,frame=MainFrame,name,text="Close",
 		button <- tkbutton(	name, text=text,
 							command= function() {            
 										tkdestroy(window)
-										rm(list=ls(env=TGUIenv),envir=TGUIenv)
+										rm(list=ls(env=as.environment(which(search()=="TGUIenv"))),envir=as.environment(which(search()=="TGUIenv")))
 									},
 							fg="red")
 		tkgrid(tklabel(name,text="  "))
