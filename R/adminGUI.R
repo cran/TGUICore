@@ -81,7 +81,7 @@ enableExercise <- defmacro( frame=MainFrame,
  	}
 )
 
-`adminGUI` <- function(pwd="defaultPW",evaluierung = FALSE, enableAll=TRUE) {
+`adminGUI` <- function(pwd="defaultPW",evaluierung = FALSE, enableAll=FALSE) {
   	if(pwd==pw()) {
 		returnExamplesWithAusw <- function() {
 			contents <- aTget("contents")	

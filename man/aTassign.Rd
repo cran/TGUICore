@@ -5,10 +5,10 @@
 \alias{aTrm}
 \title{aTassign}
 \description{assign/delete/check/retrieve an object to/in/from the namespace adminTGUIenv.}
-\usage{aTassign(x,value)}
-\usage{aTget(x)}
-\usage{aTrm(x)}
-\usage{aTexists(x)}
+\usage{aTassign(x,value)
+aTget(x)
+aTrm(x)
+aTexists(x)}
 \arguments{
 	\item{x}{the name of the object to be created/loaded/checked/removed in/from namespace adminTGUIenv.}
 	\item{value}{the value/object to be assigned.}

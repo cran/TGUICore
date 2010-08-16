@@ -6,11 +6,11 @@
 \alias{Tclear}
 \title{Tassign}
 \description{assign/delete/check/retrieve an object to/in/from the namespace TGUIenv.}
-\usage{Tassign(x,value)}
-\usage{Tget(x)}
-\usage{Trm(x)}
-\usage{Texists(x)}
-\usage{Tclear()}
+\usage{Tassign(x,value)
+Tget(x)
+Trm(x)
+Texists(x)
+Tclear()}
 
 \arguments{
 	\item{x}{the name of the object to be created/loaded/checked/removed in/from namespace TGUIenv.}
