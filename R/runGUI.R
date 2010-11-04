@@ -1,4 +1,4 @@
-runGUI <- function(){
+runGUI <- function(onlyCourse=NULL){
 	callExercise <- function(command) {
     	split_command <- unlist(strsplit(command,"\\("))
     	TF <- length(rL <- readLines(fc <- file(paste(aTget("pathGUI"),"/adminExercise.txt",sep=""))))>0
@@ -35,12 +35,18 @@ runGUI <- function(){
   	KursMenu <- list()
   	TeilMenu <- list()
   	contents <- aTget("contents")
+    if(!is.null(onlyCourse)){
+      contents <- contents[contents[,1]==onlyCourse,,drop=FALSE]
+      if(nrow(contents)==0)
+        stop("Selected Course not found!")
+    }
   	for(i in 1:nrow(contents)) {
     	if(i==1) {
       		KursMenu[[indKurs]] <- tkmenu(topMenu,tearoff=FALSE)
           tkadd(KursMenu[[indKurs]],"command",label="Check Yourself!", font=fontHeading1b)
           if(!contents[i,1]%in%aTget("alwaysOn")){
-            tkadd(topMenu,"cascade", label=paste("Course ",contents[i,1],"  ",sep=""), font=fontHeading, menu=KursMenu[[indKurs]])
+            #tkadd(topMenu,"cascade", label=paste("Course ",contents[i,1],"  ",sep=""), font=fontHeading, menu=KursMenu[[indKurs]])
+            tkadd(topMenu,"cascade", label=paste(" ",contents[i,1],"  ",sep=""), font=fontHeading, menu=KursMenu[[indKurs]])
             TeilMenu[[indTeil]] <- tkmenu(topMenu,tearoff=FALSE)
             tkadd(KursMenu[[indKurs]],"cascade",label=paste("  ",contents[i,2],"  ",sep=""), font=fontHeading1c, menu=TeilMenu[[indTeil]])
           }else{
@@ -59,7 +65,8 @@ runGUI <- function(){
 		        KursMenu[[indKurs]] <- tkmenu(topMenu,tearoff=FALSE)
             tkadd(KursMenu[[indKurs]],"command",label="Check Yourself!", font=fontHeading1b)
             if(!contents[i,1]%in%aTget("alwaysOn")){	
-              tkadd(topMenu,"cascade",label=paste("Course ",contents[i,1],"  ",sep=""), font=fontHeading, menu=KursMenu[[indKurs]])
+              #tkadd(topMenu,"cascade",label=paste("Course ",contents[i,1],"  ",sep=""), font=fontHeading, menu=KursMenu[[indKurs]])
+              tkadd(topMenu,"cascade",label=paste(" ",contents[i,1],"  ",sep=""), font=fontHeading, menu=KursMenu[[indKurs]])
               indTeil <-indTeil + 1
               TeilMenu[[indTeil]] <- tkmenu(topMenu,tearoff=FALSE)
               tkadd(KursMenu[[indKurs]],"cascade",label=paste("  ",contents[i,2],"  ",sep=""), font=fontHeading1c, menu=TeilMenu[[indTeil]])

@@ -63,7 +63,7 @@
 		write.table(dat, file="adminExercise.txt", row.names=FALSE, col.names=FALSE, quote=FALSE)			
 	}		
 	
-	cat("Start the GUI for the participants with runGUI()\n and the GUI for the course leader with adminGUI()\n")
+	  cat("Start the GUI for the participants with runGUI()\n and the GUI for the course leader with adminGUI()\n")
     cat("The window of the R console should be minimized while using the GUI.\n")
 #  	runGUI()
 }
