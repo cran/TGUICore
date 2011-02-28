@@ -7,5 +7,5 @@ showPDF,setFont,
 Tassign,Tget,Texists,Trm,Tclear,
 aTassign,aTget,aTexists,aTrm,
 SingleChoiceGrid,
-Feedback
+Feedback,plotTable
 )

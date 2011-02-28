@@ -2,12 +2,13 @@
 \alias{adminGUI}
 \title{adminGUI}
 \description{Graphical trainer interface for interactive and probably statistical courses}
-\usage{adminGUI(onlyCourse=NULL, pwd="defaultPW",evaluierung = FALSE, enableAll=FALSE) }
+\usage{adminGUI(onlyCourse=NULL, pwd="defaultPW",evaluierung = FALSE, enableAll=FALSE, showPart=TRUE) }
 \arguments{
 	\item{onlyCourse}{should be set to a specific course name for only handling on course of contents.csv}
 	\item{pwd}{admin-GUI may be started with password only}
   \item{evaluierung}{should GUI be started in evaluation mode, default=FALSE}
   \item{enableAll}{should GUI be started with all available options, default=TRUE}
+  \item{showPart}{show only the parts and not each exercise as checkbox}
   	
 }
 \details{The menu entries of the GUI are defined by a csv file in the directory etc in the installation

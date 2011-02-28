@@ -1,0 +1,21 @@
+citHeader("To cite TGUICore in publications use:")
+
+citEntry(entry = "Article",
+  title        = "An Open Source Approach for Modern Teaching Methods: The Interactive {TGUI} System",
+  author       = personList(as.person("Gerlinde Dinges"),
+                   as.person("Alexander Kowarik"),
+                   as.person("Bernhard Meindl"),
+                   as.person("Matthias Templ")),
+  journal      = "Journal of Statistical Software",
+  year         = "2011",
+  volume       = "39",
+  number       = "7",
+  pages        = "1--19",
+  url          = "http://www.jstatsoft.org/v39/i07/",
+
+  textVersion  =
+  paste("Gerlinde Dinges, Alexander Kowarik, Bernhard Meindl, Matthias Templ (2011).",
+        "An Open Source Approach for Modern Teaching Methods: The Interactive TGUI System.",
+        "Journal of Statistical Software, 39(7), 1-19.",
+        "URL http://www.jstatsoft.org/v39/i07/.")
+)

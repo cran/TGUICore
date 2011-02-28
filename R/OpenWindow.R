@@ -1,6 +1,7 @@
 OpenWindow <- defmacro(window=tt,frame=MainFrame,fullscreen=TRUE,title="",
     image=NULL,image_position="top",
     expr={		
+		Tclear()
 		# image_position in top, bottom
 	  	if(!image_position %in% c("top", "bottom"))
 			stop("please specify a correct position of the image")
